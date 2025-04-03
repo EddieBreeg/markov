@@ -4,3 +4,4 @@ build
 install
 *.txt
 *.zip
+!CMakeLists.txt
