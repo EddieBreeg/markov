@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+	<Type Name="mrkv::ShiftingArray&lt;*&gt;">
+		<DisplayString>{{ size = {m_Size} }}</DisplayString>
+		<Expand>
+			<Item Name="[size]" ExcludeView="simple">m_Size</Item>
+			<Item Name="[capacity]" ExcludeView="simple">m_Capacity</Item>
+			<IndexListItems Condition="m_Size != 0">
+				<Size>m_Size</Size>
+				<ValueNode>m_Buffer[(m_Pos + $i) % m_Size]</ValueNode>
+			</IndexListItems>
+		</Expand>
+	</Type>
+</AutoVisualizer>
